@@ -1,0 +1,66 @@
+RPNCalc - Reverse Polish Notation Calculator
+
+Reverse Polish notation (RPN), also known as Polish postfix notation or 
+simply postfix notation, is a mathematical notation in which operators 
+follow their operands, in contrast to Polish notation (PN), in which 
+operators precede their operands.
+
+RPN is efficient for computer math. As a postfix expression is scanned from
+left to right, operands are simply placed into a last-in, first-out (LIFO) 
+stack and operators may be immediately applied to the operands at the 
+top of the stack. By contrast, expressions with parentheses and precedence 
+(infix notation) require that operators be delayed until some later point.
+
+I used my own Stack class template and several of my mathematical operator 
+implementations to make RPNCalc.
+
+    To compile and link, run;    
+        make RPNCalc
+            -RPNCalc should now be executable in local directory
+
+    usage : ./RPNCalc
+            ./RPNCalc input_file
+            ./RPNCalc input_file output_file
+
+When given no arguments, runs in normal mode - reads calculator arguments 
+via standard input and writes to standard output.
+
+When given one input_file as an argument, opens and reads calculator 
+arguments from input_file, writes to standard output.
+
+When given two arguments, input_file and output_file, opens and reads 
+calculator arguments from input_file, opens and writes to output_file.
+
+    Commands:
+        q 
+            -quit, exit RPNCalc
+        p
+            -print, show value atop stack, the last value evaluated by 
+             RPNCalc
+        c
+            -clear stack
+        f <filename>
+            -read commands from <filename>
+        <decimal>
+            -push value <decimal> onto RPNCalc stack
+             ex. "1 2 p" => "2.000000"
+        +
+            -addition of operands
+             ex. "1 2 + p" => "3.000000"
+        -  
+            -subtraction of operands
+             ex. "1 2 - p" => "-1.000000"
+        *
+            -multiplication of operands
+             ex. "1 2 * p" => "2.000000"
+        / 
+            -division of operands
+             ex. "1 2 / p" => "0.500000"   
+        ^ 
+            -power, raise base to exponenet.              
+             ex. "2 3 ^ p" => "8.000000"
+        !
+            -factorial, unary operand
+             ex. "3 ! p" => "6.000000"
+
+
